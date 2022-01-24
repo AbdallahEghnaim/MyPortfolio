@@ -1,46 +1,180 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+
  <meta charset="UTF-8">
- <meta name="wiewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title> About me </title>
- <link rel="stylesheet" type="text/css" href="about.css">
+
+ <script src="Three.js"></script>
+
+<style>
+   
+   body { 
+      
+      margin: 0;
+   
+   }
+   canvas { 
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1;
+      
+      }
+
+     img {
+      
+      position: center;
+
+      width:25%;
+      height: 30%;
+      opacity: 0.8;
+      top :50%;
+      left:50%;
+
+      
+     } 
+    
+     .container{
+      display: grid;
+    height: 100vh;
+    width: 100%;
+    align-content: stretch;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+ 
+
+     }
+
+
+     .content{
+
+      display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10px;
+     }
+
+     h1,h2, img, p {
+
+      font-family:'Times New Roman', Times, serif;
+      color:white ;
+      flex-basis: 0;
+      flex-grow: 1;
+      clip-path: polygon(0 0, 100% 0,100% 0, 0 0);
+}
+
+
+     .content:before {
+
+content: '';
+position: absolute;
+top: 60px;
+left: 0;
+width: 100%;
+border-bottom: 1px solid white;
+transform: scaleX(1);
+
+
+}
+
+
+h1 {
+
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ color:limegreen;
+}
+
+h2 {
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   color:white;
+}
+   </style>
 </head>
     
 <body>
 
 
 
-    <div class="container">
+<div class="container">
+   
+   <div class="content">
+     <h1>Abdallah Eghnaim </h1>
 
-     <h1> Abdallah Eghnaim<h1>
+     <h2>Software developer and Network Engineer</h2>
 
-     <h2>Software developmer & Network Developer</h2>
-       
-     <img src="img/moon-modified.png" alt= moon_pic class="moon">
+    <img src="img/IMG_0236-modified.png">
 
-      <div class="image">
+    <p>
+        
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, ad. Nam facere distinctio repellendus maiores labore perspiciatis, rerum placeat esse, reiciendis cupiditate sed qui alias accusamus ducimus sit repudiandae saepe.
 
-       <img src="img/IMG_0236-modified.png" alt="my_pic">
 
-      </div>
 
-      <p>
-     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo molestias voluptates libero? Ipsum tenetur numquam porro suscipit corrupti vel exercitationem maiores perferendis earum, nihil ducimus sapiente recusandae eaque velit quam.
+    </p>
 
-      </p>
+  
+   
+   </div>
 
-     <a href="index.html" class="btn"> Homepage</a>
 
-  </div>
+</div>
 
-    </div>
+
+
+
+
+
+
+
+   <canvas class="webgl"></canvas>
+
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/CSSRulePlugin.min.js" integrity="sha512-SuKlyVGK9c7adN5I0qO0zZt1KAXK9WpUguwgH16A3s8Wvrc1X3mum4PS9bI7223Y2v5KBzx3qTCdlVymgF0uWg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src ="secondary.js"></script>
+
 <script>
 
+const content = CSSRulePlugin.getRule('.content:before')
 
 
-</script>
 
+const h1 = document.querySelector('h1')
+
+
+const h2 = document.querySelector('h2')
+
+const img = document.querySelector('img')
+
+
+const p = document.querySelector('p')
+
+const t1 = gsap.timeline()
+
+t1.from(content, { delay: .5, duration: 4,cssRule:{scaleX: 0}})
+
+t1.to(h1, { duration: 2, clipPath: 'polygon(0 0, 100% 0,100% 100%, 0% 100%)', y: '30px'}, "-=3")
+
+t1.to(h2, { duration:4, clipPath: 'polygon(0 0, 100% 0,100% 100%, 0% 100%)', y:'30px'},"-=2")
+
+t1.to(img, { duration: 2, clipPath: 'polygon(0 0, 100% 0,100% 100%, 0% 100%)', y: '30px'}, "-=3")
+
+t1.to(p, { duration:4, clipPath: 'polygon(0 0, 100% 0,100% 100%, 0% 100%)', y:'30px'},"-=2")
+
+
+
+
+    </script>
+
+   
  </body>
 
 

@@ -1,1 +1,0 @@
-var express=reqiure("express");const app=express();app.get("/",(function(e,s){s.send("woahhh")})),app.listen(3e3),console.log("test");

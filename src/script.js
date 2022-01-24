@@ -12,6 +12,7 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
+
 // Objects
 const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
 const partcilesGeometry =new THREE.BufferGeometry;
@@ -46,7 +47,7 @@ pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
-
+ 
 /**
  * Sizes
  */

@@ -1,46 +1,123 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+
  <meta charset="UTF-8">
- <meta name="wiewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title> About me </title>
- <link rel="stylesheet" type="text/css" href="about.css">
+
+ <script src="Three.js">
+</script>
+
+<style>
+   
+   body { 
+      
+      margin: 0;
+   
+   }
+   canvas { 
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1;
+      
+      }
+
+     img {
+      
+      position: center;
+
+      width:30%;
+      height: 30%;
+      opacity: 0.6;
+      top :50%;
+      left:50%;
+
+      
+     } 
+    
+     .container{
+     
+
+
+    width:100%;
+    height:100%;
+
+     }
+
+
+     .content{
+        
+    
+
+
+
+
+     }
+   </style>
 </head>
     
 <body>
+<div class="container">
+   
+   <div class="content">
+
+    <img src="img/IMG_0236-modified.png">
+
+    <p>
+        
+     
 
 
 
-    <div class="container">
+    </p>
 
-     <h1> Abdallah Eghnaim<h1>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, ad. Nam facere distinctio repellendus maiores labore perspiciatis, rerum placeat esse, reiciendis cupiditate sed qui alias accusamus ducimus sit repudiandae saepe.
+   
+   </div>
 
-     <h2>Software developmer & Network Developer</h2>
-       
-     <img src="img/moon-modified.png" alt= moon_pic class="moon">
 
-      <div class="image">
-
-       <img src="img/IMG_0236-modified.png" alt="my_pic">
-
-      </div>
-
-      <p>
-     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo molestias voluptates libero? Ipsum tenetur numquam porro suscipit corrupti vel exercitationem maiores perferendis earum, nihil ducimus sapiente recusandae eaque velit quam.
-
-      </p>
-
-     <a href="/threejs-webpack-starter/src/index.html" class="btn"> Homepage</a>
-
-  </div>
-
-    </div>
-<script>
+</div>
 
 
 
-</script>
 
+
+
+
+
+   <canvas class="webgl"></canvas>
+
+
+
+   
+    <script src ="secondary.js">
+
+// use the CSS plugin to select container to achieve a delayed drop down effect
+const content = CSSRulePlugin.getRule('.content:before')
+
+const img = document.querySelector('img')
+
+
+const p = document.querySelector('p')
+
+const t1 = gsap.timeline()
+
+t1.from(content, { delay: .5, duration: 4,cssRule:{scaleX: 0}})
+
+t1.to(img, { duration: 2, clipPath: 'polygon(0 0, 100% 0,100% 100%, 0% 100%)', y: '30px'}, "-=3")
+
+t1.to(p, { duration:4, clipPath: 'polygon(0 0, 100% 0,100% 100%, 0% 100%)', y:'30px'},"-=2")
+
+
+
+
+    </script>
+
+   
  </body>
 
 

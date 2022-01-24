@@ -22,6 +22,7 @@ module.exports = {
             template: path.resolve(__dirname, '../src/index.html'),
             minify: true
         }),
+       
         new MiniCSSExtractPlugin()
     ],
     module:
@@ -50,7 +51,7 @@ module.exports = {
                 use:
                 [
                     MiniCSSExtractPlugin.loader,
-                    'css-loader'
+                    'css-loader',
                 ]
             },
 
